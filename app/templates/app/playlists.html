@@ -1,0 +1,58 @@
+{% extends 'app/layouts/base.html' %}
+
+{% load static %}
+{% block title %}Плейлисты{% endblock %}
+
+{% block content %}
+
+<div class="playlist-panel-container">
+    <div class="playlist-panel-name">
+        Мой плейлист
+    </div>
+
+    {% for playlist in playlists %}
+    {% for song in playlist.songs.all %}
+
+    <div class="song-playlist">
+        <div class="song-playlist-text">
+            <div class="song-img">
+
+                <img class="song-image" src="{{ song.photo.url }}" alt="{{ song.name }}">
+
+        </div>
+            <div class="song-name-and-singer">
+            <div class="song-name">
+                {{ song.name }}
+            </div>
+            <div class="song-singer">
+                {{ song.singer.name }}
+            </div>
+        </div>
+        </div>
+ <div class="song-playlist-play">
+    <div class="add-plus-and-song-play-icon">
+        <div class="song-play-icon" onclick="playSong('{{ song.audio.url }}')">
+            <img class="play-icon" src="{% static 'app/images/play.png' %}" alt="Play song">
+        </div>
+    </div>
+
+    <div class="song-playlist-delete">
+        <form action="{% url 'remove-song-from-playlist' playlist.id song.id %}" method="post" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" style="background:none; border:none; color:white;cursor: pointer;">Удалить</button>
+        </form>
+    </div>
+</div>
+
+    </div>
+
+
+
+
+    {% endfor %}
+    {% endfor %}
+
+</div>
+
+{% endblock %}
+

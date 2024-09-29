@@ -1,0 +1,57 @@
+{% extends 'app/layouts/base.html' %}
+{% load static %}
+
+{% block title %}Все песни{% endblock %}
+{% block content %}
+    <div class="outer-container">
+        <h1 class="search-title">Результаты поиска</h1>
+        <form class="search-form" method="GET" action="{% url 'search_songs' %}">
+            {{ form.as_p }}
+            <button type="submit" class="search-button">Поиск</button>
+        </form>
+
+        <div class="results-container">
+            <div class="search-results">
+                {% if songs %}
+                    <h2 class="results-title">Найденные песни:</h2>
+                    <div class="category-songs">
+                        {% for song in songs %}
+<div class="song-container">
+    <div class="song-image">
+        <img class="song-image" src="{{ song.photo.url }}" alt="{{ song.name }}">
+    </div>
+    <div class="song-name-and-singer">
+        <div class="song-name">{{ song.name }}</div>
+        <div class="song-singer">{{ song.singer }}</div>
+    </div>
+
+    <div class="add-plus-and-song-play-icon">
+        <div class="add-plus">
+            <div class="add-plus-text">Добавить в плейлист</div>
+            {% if playlists %}
+                <select name="playlist" onchange="location = this.value;">
+                    <option value="">Выберите плейлист</option>
+                    {% for playlist in playlists %}
+                        <option value="{% url 'add-to-playlist' playlist.id song.id %}">
+                            {{ playlist.name }}
+                        </option>
+                    {% endfor %}
+                </select>
+            {% else %}
+                <div>У вас нет плейлистов</div>
+            {% endif %}
+        </div>
+        <div class="song-play-icon" onclick="playSong('{{ song.audio.url }}')">
+            <img class="play-icon" src="{% static 'app/images/play.png' %}" alt="Воспроизвести песню">
+        </div>
+    </div>
+</div>
+{% endfor %}
+                    </div>
+                {% else %}
+                    <p class="no-results">Песни не найдены.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

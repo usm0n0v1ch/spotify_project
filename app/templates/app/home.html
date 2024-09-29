@@ -1,0 +1,28 @@
+{% extends 'app/layouts/base.html' %}
+
+{% load static %}
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+    <div class="everything-else">
+        <div class="everything-else-text">
+            Все остальное
+        </div>
+        <div class="everything-else-cards">
+            {% for category in categories %}
+            <a href="{% url 'category-songs' category.pk %}">
+                <div class="everything-else-card">
+                <div class="everything-else-card-text">
+                    {{ category.name }}
+                </div>
+                <div class="everything-else-card-img">
+                    <img class="everything-else-card-image" src="{{ category.photo.url }}">
+                </div>
+            </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'app/layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="category-songs">
+    <div class="category-songs-text">
+        {{ category.name }}
+    </div>
+    {% for song in songs %}
+        <div class="category-songs-card">
+            <div class="song-data">
+                <div class="song-img">
+                    <img class="song-image" src="{{ song.photo.url }}" alt="">
+                </div>
+                <div class="song-name-and-singer">
+                    <div class="song-name">
+                        {{ song.name }}
+                    </div>
+                    <div class="song-singer">
+                        {{ song.singer }}
+                    </div>
+                </div>
+            </div>
+        <div class="add-plus-and-song-play-icon">
+            <div class="add-plus">
+                <div class="add-plus-text">Добавить в плейлист</div>
+                <a href="{%  url 'add-to-playlist' playlist.id song.id %}">
+                    <img class="add-plus-logo" src="{% static 'app/images/plus.png' %}">
+                </a>
+            </div>
+            <div class="song-play-icon" onclick="playSong('{{ song.audio.url }}')">
+
+                <img class="play-icon" src="{% static 'app/images/play.png' %}">
+            </div>
+        </div>
+
+
+        </div>
+
+
+    {% endfor %}
+</div>
+
+
+
+
+
+{% endblock %}

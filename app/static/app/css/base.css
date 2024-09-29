@@ -1,0 +1,24 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #292727;
+}
+
+.content{
+    display: flex;
+
+}
+
+.left-header{
+    width: 45%;
+}
+
+a{
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    color: white;
+}
+a:hover{
+    transform: scale(1.1);
+}

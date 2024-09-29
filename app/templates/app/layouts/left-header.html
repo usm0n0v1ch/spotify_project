@@ -1,0 +1,53 @@
+{% load static %}
+
+
+
+<div class="my-media-library">
+    <div class="my-media-library-first-line" >
+        <div class="my-media-library-logo">
+            <div class="my-media-library-logo-img">
+                <img src="{% static 'app/images/playlist.png' %}">
+            </div>
+            <div class="my-media-library-logo-text">
+                Моя медиатека
+            </div>
+        </div>
+        <div class="plus">
+            <img src="{% static 'app/images/plus.png' %}">
+        </div>
+    </div>
+    <div class="my-media-library-second-line">
+        <div class="playlists">
+            <a href="{% url 'playlists' %}">
+                Плейлисты
+            </a>
+        </div>
+        <div class="search-playlist-and-recent">
+            <div class="search-playlist">
+            <img src="{% static 'app/images/search.png' %}">
+        </div>
+{#        <div class="recent">#}
+{#            <div class="recent-text">#}
+{#                Недавно прослушано#}
+{#            </div>#}
+{#            <div class="recent-img">#}
+{#                <img src="{% static 'app/images/list.png' %}">#}
+{#            </div>#}
+{#        </div>#}
+        </div>
+    </div>
+{#    <div class="my-media-library-third-line">#}
+{#        <div class="my-media-library-third-line-name">#}
+{#            Название#}
+{#        </div>#}
+{#        <div class="my-media-library-third-line-date-and-time">#}
+{#            <div class="my-media-library-third-line-date">#}
+{#                Дата добавления#}
+{#            </div>#}
+{#            <div class="my-media-library-third-line-time">#}
+{#                Прослушано#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+
+</div>

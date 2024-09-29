@@ -1,0 +1,20 @@
+{% extends 'app/layouts/base.html' %}
+
+
+{% load static %}
+
+{% block title %}Удалить категорию {% endblock %}
+
+{% block content %}
+<div>
+    <h1>Вы уверены, что хотите удалить эту категорию? {{ category.name }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Удалить</button>
+        <a style="background: red; border-radius: 5px;padding:5px" href="{% url 'category-songs' category.pk %}">Отмена</a>
+    </form>
+</div>
+
+
+
+{% endblock %}

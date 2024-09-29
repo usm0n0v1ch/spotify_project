@@ -1,0 +1,48 @@
+
+.everything-else{
+    color: white;
+    background: black;
+    margin: 20px 20px 20px 0px;
+    width: 80%;
+    border:5px solid green;
+    border-radius: 12px;
+    max-height: 500px;
+    overflow-y: scroll;
+}
+.everything-else-text{
+    padding: 20px;
+    font-size: 36px;
+}
+.everything-else-cards {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+}
+.everything-else-card-text {
+    color: white;
+}
+.everything-else-card {
+    display: flex;
+    border-radius: 12px;
+    padding: 10px;
+    font-size: 24px;
+    width: 250px;
+    height: 150px;
+    flex-basis: calc(33.33% - 20px);
+    box-sizing: border-box;
+    justify-content: space-between;
+    position: relative; /* Добавлено для позиционирования */
+    overflow: hidden; /* Обрезает содержимое, выходящее за пределы карточки */
+}
+
+.everything-else-card-image {
+    width: 100px;
+    height: 100px;
+    transform: rotate(30deg);
+    position: absolute; /* Устанавливает позицию абсолютной */
+    top: 40%; /* Центрирует по вертикали */
+    left: 70%; /* Центрирует по горизонтали */
+
+    z-index: 1; /* Повышает уровень, чтобы быть над фоном */
+}

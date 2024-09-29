@@ -1,0 +1,33 @@
+{% extends 'app/layouts/base.html' %}
+
+{% load static %}
+
+{% block title %}Добавление песни{% endblock %}
+
+{% block content %}
+<div style="background: black; color: white; padding: 10px;display: flex;flex-direction: row;justify-content: space-between;margin: 20px;height: 500px;border: solid 5px green;border-radius: 24px">
+  <h2>Добавить новую песню</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Создать песню</button>
+    <a style="background: red; border-radius: 5px; padding: 5px;" href="{% url 'home' %}">Отмена</a>
+  </form>
+
+  <h3>Список песен</h3>
+  <ul>
+    {% for song in songs %}
+      <li>
+        {{ song.name }} - {{ song.singer.name }}
+
+        <a href="{% url 'edit-song' song.id %}" style="color: blue; margin-right: 10px;">Редактировать</a>
+
+        <a href="{% url 'delete-song' song.id %}" style="color: red;" onclick="return confirm('Вы уверены, что хотите удалить эту песню?');">Удалить</a>
+      </li>
+    {% empty %}
+      <li>Песен пока нет</li>
+    {% endfor %}
+  </ul>
+
+</div>
+{% endblock %}

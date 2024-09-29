@@ -1,0 +1,54 @@
+
+.outer-container {
+    background-color: black; /* Background color for the outer container */
+    color: white; /* Text color */
+    padding: 20px; /* Padding inside the container */
+    border-radius: 12px; /* Rounded corners */
+    max-height: 500px; /* Set maximum height */
+    overflow-y: auto; /* Enable scrolling if content exceeds max height */
+    margin: 20px 20px 20px 0px;
+    width: 80%; /* Set width of the container */
+
+}
+
+.search-title {
+    font-size: 28px; /* Title font size */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.search-form {
+    margin-bottom: 20px; /* Space below the form */
+}
+
+.search-button {
+    background-color: green; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Padding for the button */
+    cursor: pointer; /* Pointer on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.results-container {
+    background-color: #222; /* Dark background for results */
+    padding: 15px; /* Padding for inner results container */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.results-title {
+    font-size: 24px; /* Title font size for results */
+    margin-bottom: 15px; /* Space below results title */
+}
+
+.results-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.result-item {
+    margin-bottom: 10px; /* Space between result items */
+}
+
+.no-results {
+    color: red; /* Color for no results message */
+}

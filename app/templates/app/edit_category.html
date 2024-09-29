@@ -1,0 +1,17 @@
+{% extends 'app/layouts/base.html' %}
+{% load static %}
+
+{% block title %}Редактирование категории {% endblock %}
+
+{% block content %}
+<div style="background: black; color: white; padding: 10px;display: flex;flex-direction: row;justify-content: space-between;margin: 20px;height: 500px;border: solid 5px green;border-radius: 24px">
+
+    <h1>Редактирование категории</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Сохранить</button>
+        <a style="background: red; border-radius: 5px; padding: 5px;" href="{% url 'add-category' %}">Отмена</a>
+    </form>
+</div>
+{% endblock %}

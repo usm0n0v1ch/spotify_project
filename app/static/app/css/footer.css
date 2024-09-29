@@ -1,0 +1,44 @@
+footer {
+    background-color: #1a1a1a; /* Dark background */
+    color: #f1f1f1; /* Light text color */
+    padding: 20px;
+    text-align: center;
+}
+
+.bottom-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.custom-player {
+    background-color: #333; /* Darker background for player */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    width: 300px; /* Fixed width */
+}
+
+audio {
+    width: 100%; /* Make audio player full width */
+    outline: none; /* Remove default outline */
+}
+
+.player-controls {
+    margin-top: 10px; /* Space between audio player and controls */
+}
+
+.player-controls button {
+    background-color: #06b806; /* Primary button color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded button */
+    padding: 10px 15px; /* Padding for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.player-controls button:hover {
+    background-color: #050505; /* Darker on hover */
+}

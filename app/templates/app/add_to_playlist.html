@@ -1,0 +1,13 @@
+{% extends 'app/layouts/base_without.html' %}
+
+{% block title %}Добавить в плейлист{% endblock %}
+
+{% block content %}
+<h1>Обновить плейлист: {{ object.name }}</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="hidden" name="song_id" value="{{ song_id }}">
+    <button type="submit">Сохранить</button>
+</form>
+{% endblock %}

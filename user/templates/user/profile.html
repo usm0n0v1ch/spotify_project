@@ -1,0 +1,26 @@
+{% extends 'user/layouts/base.html' %}
+
+{% load static %}
+
+{% block title %}Профиль{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+    <div class="username">
+        {{ user.username }}
+    </div>
+    <div class="logout-btn">
+        <a href="{% url 'logout' %}">
+            Выйти из профиля
+        </a>
+    </div>
+    <div class="btn-back">
+        <a href="{% url 'home' %}">
+            Назад
+        </a>
+    </div>
+</div>
+
+
+
+{% endblock %}

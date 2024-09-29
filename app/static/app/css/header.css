@@ -1,0 +1,149 @@
+
+header {
+    display: flex;
+    background: black;
+    justify-content: space-between;
+
+}
+.left-header{
+    display: flex;
+    gap:20px;
+    padding: 20px;
+}
+.home-button,
+.search-icon,
+.obzor,
+.ring,
+.profile,
+.search-playlist,
+.playlists,
+.recent,
+.plus{
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.home-button:hover,
+.search-icon:hover,
+.obzor:hover,
+.ring:hover,
+.profile:hover,
+.search-playlist:hover,
+.playlists:hover,
+.recent:hover,
+.plus:hover{
+    transform: scale(1.1);
+}
+.right-header{
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+.search{
+    display: flex;
+    gap: 20px;
+
+}
+.search-input-field{
+    border: none;
+    border-radius: 12px;
+    width: 400px;
+    height: 50px;
+}
+
+.search-input{
+    display: flex;
+    gap: 20px;
+}
+.btn-src{
+        background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    text-align: inherit;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+}
+.my-media-library{
+    display: flex;
+    flex-direction: column;
+    background: #232222;
+    border: 5px solid green;
+    border-radius: 12px;
+    color: white;
+    height: 500px;
+
+}
+.my-media-library-first-line{
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: space-between;
+}
+.my-media-library-logo{
+    display: flex;
+    gap: 20px;
+}
+.my-media-library-logo-text{
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.my-media-library-second-line{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 20px;
+}
+.search-playlist-and-recent{
+    display: flex;
+    gap: 20px;
+}
+
+.playlists{
+    font-size: 24px;
+    padding: 10px;
+    height: 30px;
+    background: #454242;
+    border-radius: 24px;
+    margin-top: 10px;
+}
+
+.search-playlist{
+    margin-top: 10px;
+}
+.recent{
+    display: flex;
+    gap: 10px;
+    font-size: 24px;
+    background: #454242;
+    border-radius: 12px;
+    padding: 0px 10px 0px 10px;
+}
+.recent-text{
+    margin-top: 20px;
+}
+
+.my-media-library-third-line{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+    border-bottom: 1px solid white;
+    color: #9d9d9d;
+}
+.my-media-library-third-line-date-and-time{
+    display: flex;
+    gap: 20px;
+
+}
+
+.admin-options{
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: space-between;
+}

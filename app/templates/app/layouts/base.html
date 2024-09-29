@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'app/css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/everything-else.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/category-songs.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/playlists.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/all_songs.css' %}">
+</head>
+<body>
+<div class="all-container">
+    {% include 'app/layouts/header.html' %}
+
+    <div class="content">
+        <div class="left-header">
+            {% include 'app/layouts/left-header.html' %}
+        </div>
+        {% block content %}{% endblock %}
+    </div>
+{% include 'app/layouts/footer.html' %}
+</div>
+
+
+<script src="{% static 'app/js/everything-else.js' %}"></script>
+</body>
+</html>

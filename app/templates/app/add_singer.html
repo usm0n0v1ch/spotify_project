@@ -1,0 +1,30 @@
+{% extends 'app/layouts/base.html' %}
+
+{% load static %}
+
+{% block title %}Добавление исполнителя{% endblock %}
+
+{% block content %}
+ <div style="background: black; color: white; padding: 10px;display: flex;flex-direction: row;justify-content: space-between;margin: 20px;height: 500px;border: solid 5px green;border-radius: 24px">
+  <h2>Добавить нового исполнителя</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Создать исполнителя</button>
+    <a style="background: red; border-radius: 5px; padding: 5px;" href="{% url 'home' %}">Отмена</a>
+  </form>
+  <h3>Список исполнителей</h3>
+  <ul>
+    {% for singer in singers %}
+      <li>
+        {{ singer.name }}
+        <a href="{% url 'edit-singer' singer.id %}" style="color: blue; margin-right: 10px;">Редактировать</a>
+        <a href="{% url 'delete-singer' singer.id %}" style="color: red;" onclick="return confirm('Вы уверены, что хотите удалить этого исполнителя?');">Удалить</a>
+      </li>
+    {% empty %}
+      <li>Исполнителей пока нет</li>
+    {% endfor %}
+  </ul>
+ </div>
+
+{% endblock %}
